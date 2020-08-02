@@ -7,11 +7,14 @@ export const TransactionList = () => {
     return (
         <>
             <h3 className="gray-text">Transactions</h3>
-            <ul className="list">
-                {transactions.map(transaction => (
-                    <Transaction key={transaction.id} transaction={transaction} />
-                ))}
-            </ul>
+            {transactions.length > 0 ?
+                <ul className="list">
+                    {transactions.map(transaction => (
+                        <Transaction key={transaction.id} transaction={transaction} />
+                    ))}
+                </ul> :
+                <span className="info">🛈<span className="info2"> Your transactions will appear here</span> 🛈</span>
+            }
         </>
     )
 }
