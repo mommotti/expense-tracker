@@ -43,7 +43,13 @@ h3 {
 .gray-text{
   color: var(--gray)
 }
-
+.footer{
+  border-top: 1px solid var(--gray);
+  font-weight: 200;
+  font-size: 0.8em;
+  text-align: center;
+  color: var(--gray)
+}
 h4 {
   margin: 0;
   text-transform: uppercase;
@@ -155,17 +161,11 @@ input[type='number'] {
   border: 1px solid #c0392b;
   border-radius: 50%;
   color: #c0392b;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 1.1px 5px;
+  font-size: 10px;
+  padding: 1px 4px;
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
 }
 
-.list li:hover .delete-btn {
-  opacity: 1;
-}
