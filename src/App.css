@@ -34,6 +34,10 @@ h1 {
   letter-spacing: 1px;
   margin: 0;
 }
+h2{
+color: var(--blue);
+text-align: center;
+}
 
 h3 {
   border-bottom: 1px solid var(--gray);
@@ -104,6 +108,9 @@ input[type='number'] {
   width: 100%;
 }
 
+input[type='number'] {
+  border-radius: 8px 8px 0px 0px;
+}
 .btn {
   cursor: pointer;
   background-color: var(--celeste);
@@ -116,7 +123,7 @@ input[type='number'] {
   margin: 10px 0 30px;
   padding: 10px;
   width: 100%;
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
 }
 
 .btn:focus,
