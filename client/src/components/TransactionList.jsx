@@ -9,7 +9,7 @@ export const TransactionList = () => {
     }, [])
     return (
         <>
-            <h3 className="gray-text">Transactions</h3>
+            <h3 className="gray-text">Transactions </h3>
             {transactions.length > 0 ?
                 <ul className="list">
                     {transactions.map(transaction => (
