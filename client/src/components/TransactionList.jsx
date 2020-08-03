@@ -16,7 +16,7 @@ export const TransactionList = () => {
                         <Transaction key={transaction.id} transaction={transaction} />
                     ))}
                 </ul> :
-                <span className="info">🛈<span className="info2"> Your transactions will appear here</span> 🛈</span>
+                <span className="info"><span className="info2"> Your transactions will appear here</span></span>
             }
         </>
     )
