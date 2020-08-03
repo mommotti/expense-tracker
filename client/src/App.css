@@ -182,8 +182,8 @@ input[type='number'] {
   border: 1px solid #c0392b;
   border-radius: 50%;
   color: #c0392b;
-  font-size: 16px;
-  padding:  0px 5px;
+  font-size: 14px;
+  padding:  1px 5px;
   position: absolute;
   top: 50%;
   left: 0;

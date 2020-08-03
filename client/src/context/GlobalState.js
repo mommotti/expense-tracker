@@ -4,12 +4,7 @@ import AppReducer from './AppReducer';
 
 // Initial state
 const initialState = {
-    transactions: [
-        { id: 1, text: 'Payment 💰', amount: 350 },
-        { id: 2, text: 'Grocery shopping 🛒', amount: -56 },
-        { id: 3, text: 'Succulent 🌵', amount: -5 },
-        { id: 4, text: 'Sold my old gamepad 🎮', amount: 15 }
-    ],
+    transactions: [],
     error: null,
     loading: true
 }
@@ -40,18 +35,43 @@ export const GlobalProvider = ({ children }) => {
         }
     }
 
-    function deleteTransaction(id) {
-        dispatch({
-            type: 'DELETE_TRANSACTION',
-            payload: id
-        })
+    async function deleteTransaction(id) {
+        try {
+            await axios.delete(`/api/v1/transactions/${id}`)
+            dispatch({
+                type: 'DELETE_TRANSACTION',
+                payload: id
+            })
+        } catch (error) {
+            dispatch({
+                type: 'TRANSACTION_ERROR',
+                payload: error.response.data.error
+            })
+        }
+
     }
 
-    function addTransaction(transaction) {
-        dispatch({
-            type: 'ADD_TRANSACTION',
-            payload: transaction
-        })
+    async function addTransaction(transaction) {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        try {
+            const response = await axios.post('/api/v1/transactions', transaction, config)
+
+            dispatch({
+                type: 'ADD_TRANSACTION',
+                payload: response.data.data
+            })
+
+        } catch (error) {
+            dispatch({
+                type: 'TRANSACTION_ERROR',
+                payload: error.response.data.error
+            })
+        }
     }
 
     return (<GlobalContext.Provider value={{
